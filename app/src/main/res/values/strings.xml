@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Petagram</string>
+    <string name="Contacto">Juan Carlos Castillo López</string>
+    <string name="Pais">Guatemala</string>
+    <string name="HintNombre">Nombre</string>
+    <string name="HintCorreo">E-mail</string>
+    <string name="HintMensaje">Mensaje</string>
+    <string name="EnviarMensaje">Enviar mensaje</string>
+    <string name="Mascota">Rocky</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

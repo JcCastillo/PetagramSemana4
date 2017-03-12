@@ -1,4 +1,4 @@
-package com.jccl.petagram;
+package com.jccl.petagram.pojo;
 
 import android.media.Image;
 

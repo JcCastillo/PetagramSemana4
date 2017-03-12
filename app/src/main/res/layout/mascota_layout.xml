@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mascota_layout"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:stretchColumns="1,2"
     android:padding="@dimen/tablerow_padding"
@@ -16,11 +16,13 @@
         <ImageView
             android:id="@+id/imgvMascota"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/dog1"
-            android:layout_column="1" />
+            android:layout_height="@dimen/heigthMascota"
+            android:src="@drawable/dog10"
+            android:layout_column="1"
+            android:scaleType="fitCenter"/>
     </TableRow>
-    <TableRow>
+    <TableRow android:layout_height="match_parent"
+        android:layout_width="match_parent">
         <LinearLayout
             android:layout_column="1"
             android:gravity="left"
@@ -31,8 +33,7 @@
                 android:layout_width="@dimen/imagesize"
                 android:layout_height="@dimen/imagesize"
                 android:src="@drawable/icon"
-                android:scaleType="centerCrop"
-                android:layout_marginRight="@dimen/margins"/>
+                android:scaleType="centerCrop" />
             <TextView
                 android:id="@+id/tvNombre"
                 android:layout_width="wrap_content"
@@ -52,8 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:textSize="@dimen/textsize"
-                android:layout_marginRight="@dimen/margins"/>
+                android:textSize="@dimen/textsize" />
             <ImageView
                 android:id="@+id/imgvNoLike"
                 android:layout_width="@dimen/imagesize"

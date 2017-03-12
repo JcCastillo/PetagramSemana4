@@ -6,6 +6,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
+import com.jccl.petagram.adapter.MascotaAdaptador;
+import com.jccl.petagram.pojo.Mascota;
+
 import java.util.ArrayList;
 
 public class mascotas_favoritas extends AppCompatActivity {
@@ -34,7 +37,7 @@ public class mascotas_favoritas extends AppCompatActivity {
     }
 
     public void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,0);
         listaMascotas.setAdapter(adaptador);
     }
 

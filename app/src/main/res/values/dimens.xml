@@ -7,5 +7,9 @@
     <dimen name="textsize">30dp</dimen>
     <dimen name="margins">20dp</dimen>
     <dimen name="elevacion_actionbar">4dp</dimen>
+    <dimen name="textSizeContacto">20dp</dimen>
+    <dimen name="heigthMensaje">200dp</dimen>
+    <dimen name="heigthMascota">150dp</dimen>
+    <dimen name="heigthMascotaPerfil">210dp</dimen>
 
 </resources>
