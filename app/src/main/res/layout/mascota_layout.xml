@@ -33,7 +33,9 @@
                 android:layout_width="@dimen/imagesize"
                 android:layout_height="@dimen/imagesize"
                 android:src="@drawable/icon"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:layout_marginRight="@dimen/tablerow_padding"
+                />
             <TextView
                 android:id="@+id/tvNombre"
                 android:layout_width="wrap_content"

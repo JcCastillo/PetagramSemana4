@@ -7,7 +7,7 @@ import android.media.Image;
  */
 
 public class Mascota {
-
+    private int Id;
     private String nombre;
     private int Imagen;
     private int Huesos = 0;
@@ -22,6 +22,10 @@ public class Mascota {
         this.nombre = nombre;
         Imagen = imagen;
         this.Huesos = huesos;
+    }
+
+    public Mascota() {
+
     }
 
     public String getNombre() {
@@ -58,5 +62,13 @@ public class Mascota {
 
     public void DarHueso(){
         this.Huesos = this.Huesos +1;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 }

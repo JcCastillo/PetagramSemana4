@@ -1,12 +1,15 @@
 package com.jccl.petagram.adapter;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.jccl.petagram.db.ConstructorMascotas;
 import com.jccl.petagram.pojo.Mascota;
 import com.jccl.petagram.R;
 
@@ -20,10 +23,13 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
     ArrayList<Mascota> mascotas;
     int opcion;
+    Activity activity;
 
-    public MascotaAdaptador(ArrayList<Mascota> mascotas, int opcion){
+    public MascotaAdaptador(ArrayList<Mascota> mascotas, Activity activity, int opcion){
         this.mascotas = mascotas;
         this.opcion = opcion;
+        this.activity = activity;
+
     }
 
     @Override
@@ -33,14 +39,25 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     }
 
     @Override
-    public void onBindViewHolder(MascotaViewHolder mascotaViewHolder, int position) {
-        Mascota mascota = mascotas.get(position);
+    public void onBindViewHolder(final MascotaViewHolder mascotaViewHolder, int position) {
+        final Mascota mascota = mascotas.get(position);
         if (opcion == 0) {
             mascotaViewHolder.tvNombre.setText(mascota.getNombre());
             mascotaViewHolder.imgvMascota.setImageResource(mascota.getImagen());
             mascotaViewHolder.imgvHuesoLike.setImageResource(R.drawable.icon);
             mascotaViewHolder.imgvNoLike.setImageResource(R.drawable.bones);
             mascotaViewHolder.tvNolike.setText(Integer.toString(mascota.getHuesos()));
+
+            mascotaViewHolder.imgvHuesoLike.setOnClickListener(new View.OnClickListener(){
+               @Override
+                public void onClick(View v){
+                   Toast.makeText(activity,"Diste un like a: " + mascota.getNombre(),Toast.LENGTH_SHORT).show();
+                   ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                   constructorMascotas.darLike(mascota);
+
+                   mascotaViewHolder.tvNolike.setText(String.valueOf(constructorMascotas.obtenerLikesMascota(mascota)));
+               }
+            });
         } else{
             mascotaViewHolder.tvNombre.setVisibility(View.GONE);
             mascotaViewHolder.tvNolike.setText(Integer.toString(mascota.getHuesos()));

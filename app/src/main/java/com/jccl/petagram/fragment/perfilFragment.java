@@ -44,7 +44,7 @@ public class perfilFragment extends Fragment {
     }
 
     public void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,1);
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,getActivity(),1);
         listaMascotas.setAdapter(adaptador);
     }
 
